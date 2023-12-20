@@ -13,7 +13,11 @@ export default function NavBar({ session }: { session: Session | null }) {
 
   return (
     <>
-      <SignInModal />
+      <div className="fixed w-full justify-center bg-sky-400 h-16">
+        <p className="text-center text-white text-xl py-5">Cercle</p>
+      </div>
+
+      {/* <SignInModal />
       <div
         className={`fixed top-0 w-full flex justify-center ${
           scrolled
@@ -45,7 +49,7 @@ export default function NavBar({ session }: { session: Session | null }) {
             )}
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 }

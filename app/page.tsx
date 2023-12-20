@@ -7,26 +7,28 @@ import Image from "next/image";
 import { nFormatter } from "@/lib/utils";
 
 export default async function Home() {
-  const { stargazers_count: stars } = await fetch(
-    "https://api.github.com/repos/steven-tey/precedent",
-    {
-      ...(process.env.GITHUB_OAUTH_TOKEN && {
-        headers: {
-          Authorization: `Bearer ${process.env.GITHUB_OAUTH_TOKEN}`,
-          "Content-Type": "application/json",
-        },
-      }),
-      // data will revalidate every 24 hours
-      next: { revalidate: 86400 },
-    },
-  )
-    .then((res) => res.json())
-    .catch((e) => console.log(e));
 
   return (
     <>
-      <div className="z-10 w-full max-w-xl px-5 xl:px-0">
-        <a
+      <div className="flex h-screen w-full flex-col py-16">
+        <div className="bg-sky-400">
+          <h1 className="text-center text-white text-4xl py-5 font-bold">Welcome to</h1>
+        </div>
+        <div className="">
+          <h1 className="text-center text-4xl py-5 font-bold">digital loyalty</h1>
+        </div>
+
+        <div className="flex h-80 items-center justify-center">
+          <p>Cup Image</p>
+        </div>
+
+        <div className="flex items-center justify-center">
+          <button className="px-20 py-3.5 font-semibold bg-cyan-500 text-white rounded-xl   text-2xl leading-tight">
+            Lets go!
+          </button>
+        </div>
+
+        {/* <a
           href="https://twitter.com/steventey/status/1613928948915920896"
           target="_blank"
           rel="noreferrer"
@@ -105,7 +107,7 @@ export default async function Home() {
             }
             large={large}
           />
-        ))}
+        ))} */}
       </div>
     </>
   );
